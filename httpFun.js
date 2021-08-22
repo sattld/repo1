@@ -66,12 +66,9 @@ function register(req, res){
     })
 }
 function uploadFun(req, res){
-    let {
-        buffer,
-        mimetype,
-        originalname
-    } = req.file
-    
+    let file = req.file;
+    fs.renameSync(file.path,`uploads/${file.originalname}`);
+    res.send(`uploads/${file.originalname}`);
 }
 module.exports = {
     login,
