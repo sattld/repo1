@@ -70,6 +70,7 @@ function uploadFun(req, res){
     fs.renameSync(file.path,`uploads/${file.originalname}`);
     res.send(`uploads/${file.originalname}`);
 }
+
 module.exports = {
     login,
     register,
